@@ -111,10 +111,10 @@ nav a {
 
 .procurar{
     width: 100%;
-    margin-left: 10px;
+    margin-left: 38px;
     text-align: left;
     font-size: 15px;  
-    color: #CCCCCC; 
+    color: rgba(0,0,0,.87); 
 
     border: none;
     outline: none;
@@ -128,17 +128,21 @@ nav a {
 
 }
 
-
 .search_buttons button{
-    border: 1px none;
-    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
-    color: #000000DE;
-
     width: 150px;  
     margin-top: 10px;
     margin-right: 5px;
     padding: 10px;
+
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+    /* Retira bordas ao clicar */
+    outline: none;
 }
+
+.hov:hover{
+    font-weight: bold;
+} 
+
 
 
 .footer_area{
@@ -157,6 +161,10 @@ nav a {
     margin-top: 200px;
     padding: 10px;
     font-size: 15px;
+}
+
+.footer_up a{
+    text-decoration: none;
 }
 
 .footer_down{
@@ -184,3 +192,91 @@ nav a {
     margin-top: 10px;
     margin-right: 10px;
 }
+
+
+/* Para retirar x azul da procura */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+/* Para cor do placeholder no input */
+::-webkit-input-placeholder {
+    color: 	#545454;
+    font-weight: 400;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    color: 	#545454;
+    font-weight: 400;
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color: 	#545454;
+    font-weight: 400;
+ }
+ 
+ :-ms-input-placeholder {  
+    color: 	#545454;
+    font-weight: 400;
+ }
+
+ /* COMEÇAR MEDIA PARA PEQUENOS APARELHOS */
+
+ @media only screen and (min-width: 320px) and (max-width: 475px) {
+    
+    body{
+        width: 475px;
+    }
+
+    header {     
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 325px;
+    }
+
+    .main_course {
+        margin-top: 10px;
+        margin-bottom: -66px;
+        height: 310px;
+    }
+
+    .logo {
+        height: 200px;
+    }
+    
+    .search_bar {
+        width: 375px;
+    }
+    
+    .footer_up {
+        margin-top: 330px;
+    }
+
+}
+
+
+@media only screen and (min-width: 480px) and (max-width: 600px) {
+    
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .logo {
+        height: 200px;
+    }
+    
+    .search_bar {
+        width: 430px;
+    }
+    
+    .footer_up {
+        margin-top: 155px;
+    }
+    
+}
+
