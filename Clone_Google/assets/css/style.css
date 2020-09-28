@@ -3,52 +3,49 @@
     padding: 0;
     border: 0;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
     color: #000000DE;
 }
 
 /* Sempre pré define tamanho do header */
 header{
-    height: 135px;
-}
-
-.container{
+    position: absolute;
+    top: 0;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    padding: 20px;
 }
 
 .menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     margin-top: 15px;
 }
 
 
 /* Sempre por tag nav não menu ul ou menu li */
-nav ul {
+.menu ul {
     /* Retira as bolinhas */
     list-style: none;
     display: flex;
     flex-direction: row;
     /* Põem items ao centro da div */
     align-items: center;
-    justify-content: space-between;
 }
 
 /* Distanciamento entre si */
-nav li {
-    margin-right: 20px;
+.menu ul li {
+    list-style: none;
+    margin-left: 20px;
 }
 
-nav a {
+.menu ul li a {
     /* Retira os sublinhados */
     text-decoration: none;
     color: #000000DE;
     font-size: 13px;
 }
 
-.photo {
+.menu .photo {
     border-radius: 40px;
     height: 45px
 }
@@ -60,18 +57,30 @@ nav a {
     align-items: center;
 }
 
+.main_course {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+/* Centralizar todos os conteudo do main course no centro */
 #main,
 #main_search,
 #main_buttons {
     display: flex;
     justify-content: center;
-} 
+    align-items: center;
+}
 
+/* Imagem Google */
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 275px;
+    height: 215px;
+    margin-top: 115px;
+    margin-bottom: -25px;
 }
 
 .logo img{
@@ -79,45 +88,43 @@ nav a {
     height: 92px;
 }
 
-.search_bar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 561px;
-    height: 44px;
-
-    margin-top: -20px;
+/* Search */
+.search_bar {
+    position: relative;
+    width: 550px;
     margin-bottom: 20px;
-
-    border: 1px;
-    /* Shadow do Google */
-    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+    border: 1px solid #f2f2f2;
     border-radius: 25px;
-    
-
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 }
 
 .search_img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 12px 20px;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
-    margin-right: 10px;
+    pointer-events: none;
 }
 
 .search_img img {
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .procurar{
     width: 100%;
-    margin-left: 38px;
-    text-align: left;
-    font-size: 15px;  
-    color: rgba(0,0,0,.87); 
+    padding: 13px;
+    padding-left: 45px;
+    padding-right: 60px;
+    border-radius: 25px;
+    font-size: 15px; 
 
+    text-align: left;
     border: none;
     outline: none;
+    color: rgba(0,0,0,.87); 
 }
 
 .search_bar img {
@@ -137,6 +144,7 @@ nav a {
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
     /* Retira bordas ao clicar */
     outline: none;
+    cursor: pointer;
 }
 
 .hov:hover{
@@ -144,12 +152,12 @@ nav a {
 } 
 
 
-
 .footer_area{
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    display: block;
-    background-color: #CCCCCC;
-
+    background-color: #f2f2f2;
     font-size: 13px;
 }
 
@@ -157,8 +165,6 @@ nav a {
     display: flex;
     justify-content: left;
     align-items: flex-end;
-
-    margin-top: 200px;
     padding: 10px;
     font-size: 15px;
 }
@@ -180,10 +186,6 @@ nav a {
 .left_side ul,
 .right_side ul{
     display: flex;
-    align-items: baseline;
-    /* Retira as bolinhas */
-    list-style: none;
-
 }
 
 
@@ -191,6 +193,13 @@ nav a {
 .right_side ul li{
     margin-top: 10px;
     margin-right: 10px;
+    /* Retira as bolinhas */
+    list-style: none;
+}
+
+.left_side ul li a,
+.right_side ul li a{
+    text-decoration: none;
 }
 
 
@@ -222,43 +231,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     font-weight: 400;
  }
 
- /* COMEÇAR MEDIA PARA PEQUENOS APARELHOS */
 
- @media only screen and (min-width: 320px) and (max-width: 475px) {
-    
-    body{
-        width: 475px;
-    }
-
-    header {     
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        height: 325px;
-    }
-
-    .main_course {
-        margin-top: 10px;
-        margin-bottom: -66px;
-        height: 310px;
-    }
-
-    .logo {
-        height: 200px;
-    }
-    
-    .search_bar {
-        width: 375px;
-    }
-    
-    .footer_up {
-        margin-top: 330px;
-    }
-
-}
-
-
-@media only screen and (min-width: 480px) and (max-width: 600px) {
+@media (max-width: 560px) {
     
     header{
         display: flex;
@@ -266,17 +240,48 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         justify-content: flex-end;
     }
 
+    .main_course {
+        height: 465px;
+    }
+
     .logo {
-        height: 200px;
+        margin-top: none;
     }
     
     .search_bar {
-        width: 430px;
+        width: 400px;
     }
     
-    .footer_up {
-        margin-top: 155px;
+    .search_buttons{
+        display: flex;
     }
     
+}
+
+ /* COMEÇAR MEDIA PARA PEQUENOS APARELHOS */
+
+ @media (max-width: 425px) {
+    
+    header {     
+        position: inherit;
+    }
+
+    .main_course {
+        height: 250px;
+    }
+
+    .search_bar {
+        width: 315px;
+    }
+
+    .footer_area {
+        width: 100%;
+        position: fixed;
+    }
+
+    .footer_down {
+        flex-wrap: wrap;
+    }
+
 }
 
