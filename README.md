@@ -6,5 +6,5 @@ O meu primeiro projeto feito sem tutorias de um clone da Home Page do Google. Re
 <br>
 
 <p align="center">
-  <img src="Clone_Google/assets/images/layout.png" width="300" heigth="300">
+  <img src="Clone_Google/assets/images/layout.png" width="1000" heigth="1000">
 </p>
